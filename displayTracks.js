@@ -1,6 +1,6 @@
 const talks = require("./prepareTalks");
-const showTrackTime = require("../src/showTrackTime");
-const insertActivity = require("../src/insertActivity");
+const showTrackTime = require("./src/showTrackTime");
+const insertActivity = require("./src/insertActivity");
 
 const trackMorningOne = [];
 const trackMorningTwo = [];
