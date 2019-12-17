@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node displayTracks.js"
   },
   "dependencies": {
     "jest": "^24.9.0"

@@ -33,8 +33,8 @@ function subsetSum(array, target, partial, reset) {
   //   result.push(partial);
   // }
 
-  if (total === target) {
-    if (!result) result = partial;
+  if (total === target && !result) {
+    result = partial;
   }
 
   // The if statement has to be removed in order for the subset subsetSum to work and show all possible results
