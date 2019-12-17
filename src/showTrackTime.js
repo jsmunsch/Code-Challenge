@@ -4,7 +4,10 @@ function showTrackTime(track) {
     const date = new Date();
     date.setHours(9);
     date.setMinutes(currentDuration);
-
+    if (talk.startingTime) {
+      date.setHours(talk.startingTime);
+      date.setMinutes(0);
+    }
     const options = {
       hour: "numeric",
       minute: "numeric",

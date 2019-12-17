@@ -9,7 +9,11 @@ const trackAfternoonTwo = [];
 
 let result = null;
 const lunch = { title: "Lunch", duration: "60" };
-const networkingEvent = { title: "Networking Event", duration: "180" };
+const networkingEvent = {
+  title: "Networking Event",
+  duration: "180",
+  startingTime: 17
+};
 
 function subsetSum(array, target, partial, reset) {
   let total, number, remaining;
