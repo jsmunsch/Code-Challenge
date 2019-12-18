@@ -15,7 +15,7 @@ const networkingEvent = {
   startingTime: 17
 };
 
-function findCombination(array, target, partial, reset) {
+function findCombination(talk, target, partial, reset) {
   let total, number, remaining;
   partial = partial || [];
   total = partial.reduce((a, b) => Number(a) + Number(b), 0);
@@ -39,9 +39,9 @@ function findCombination(array, target, partial, reset) {
 
   // The if statement has to be removed in order for the subsetSum algorithm / findCombination to work and show all possible results
   if (!result) {
-    for (let i = 0; i < array.length; i++) {
-      number = array[i].duration;
-      remaining = array.slice(i + 1);
+    for (let i = 0; i < talk.length; i++) {
+      number = talk[i].duration;
+      remaining = talk.slice(i + 1);
       findCombination(remaining, target, partial.concat([number]), false);
     }
   }
@@ -69,8 +69,8 @@ function matchTimeToTalk(talks, number, eventNo) {
   }
 }
 
-function generateTrack(array, eventNo) {
-  array.forEach(number => {
+function generateTrack(talk, eventNo) {
+  talk.forEach(number => {
     matchTimeToTalk(talks, number, eventNo);
   });
 }
