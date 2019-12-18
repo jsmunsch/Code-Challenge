@@ -15,7 +15,7 @@ const networkingEvent = {
   startingTime: 17
 };
 
-function subsetSum(array, target, partial, reset) {
+function findCombination(array, target, partial, reset) {
   let total, number, remaining;
   partial = partial || [];
   total = partial.reduce((a, b) => Number(a) + Number(b), 0);
@@ -37,12 +37,12 @@ function subsetSum(array, target, partial, reset) {
     result = partial;
   }
 
-  // The if statement has to be removed in order for the subset subsetSum to work and show all possible results
+  // The if statement has to be removed in order for the subsetSum algorithm / findCombination to work and show all possible results
   if (!result) {
     for (let i = 0; i < array.length; i++) {
       number = array[i].duration;
       remaining = array.slice(i + 1);
-      subsetSum(remaining, target, partial.concat([number]), false);
+      findCombination(remaining, target, partial.concat([number]), false);
     }
   }
 }
@@ -75,16 +75,16 @@ function generateTrack(array, eventNo) {
   });
 }
 
-subsetSum(talks, 180);
+findCombination(talks, 180);
 generateTrack(result, 1);
 
-subsetSum(talks, 180, [], true);
+findCombination(talks, 180, [], true);
 generateTrack(result, 2);
 
-subsetSum(talks, 185, [], true);
+findCombination(talks, 185, [], true);
 generateTrack(result, 3);
 
-subsetSum(talks, 240, [], true);
+findCombination(talks, 240, [], true);
 generateTrack(result, 4);
 
 insertActivity(trackMorningTwo, lunch);
