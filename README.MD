@@ -2,7 +2,9 @@
 
 ## To run the code
 
-`node src/algorithm.js`
+`npm install` to install JEST
+`npm run test` to run JEST tests
+`npm run start` to display the tracks
 
 ## TASK 2 - Key notes
 
